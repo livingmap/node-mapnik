@@ -29,7 +29,7 @@ release_base: pre_build_check deps/geometry/include/mapbox/geometry.hpp node_mod
 	@echo "run 'make clean' for full rebuild"
 
 debug_base: pre_build_check deps/geometry/include/mapbox/geometry.hpp node_modules
-	V=1 ./node_modules/.bin/node-pre-gyp configure build --ENABLE_GLIBC_WORKAROUND=true --enable_sse=$(SSE_MATH) --loglevel=error --debug --clang
+	V=1 ./node_modules/.bin/node-pre-gyp configure build --ENABLE_GLIBC_WORKAROUND=true --ENABLE_LOG=true --DEBUG=true --enable_sse=$(SSE_MATH) --loglevel=error --debug --clang
 	@echo "run 'make clean' for full rebuild"
 
 release: mason_packages/.link/bin/mapnik-config
